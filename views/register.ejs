@@ -10,12 +10,31 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de registro. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<form>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+					<input type="email" class="form-control" id="email" aria-describedby="email">
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Contraseña</label>
+					<input type="password" class="form-control" id="password">
+				</div>
+				<div class="mb-3">
+					<label for="birthdate" class="form-label">Fecha de nacimiento</label>
+					<input type="date" class="form-control" id="birthdate">
+				</div>
+				<div class="mb-3">
+					<label for="DNI" class="form-label">DNI</label>
+					<input type="number" class="form-control" id="DNI">
+				</div>
+				<div class="mb-3">
+					<label for="profilephoto" class="form-label">Foto de perfil</label>
+					<input type="file" class="form-control" id="profilephoto">
+				</div>
+				
+				
+				<button type="submit" class="btn btn-primary">Submit</button>
+			  </form>
 
 
 	<!-- footer -->

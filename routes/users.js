@@ -14,5 +14,8 @@ router.get('/login', function(req, res) {
 router.get('/profile', function(req, res) {
   res.render('profile');
 });
+// no funciona router.get('/profile/edit', function(req, res) {
+// res.render('profile-edit');
+// });
 
 module.exports = router;
