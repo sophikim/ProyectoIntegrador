@@ -1,4 +1,5 @@
 <body>
+	
 	<!-- Header -->
 	<%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
@@ -10,11 +11,16 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h1><%= user.name %></h1>
-			<ul>
-				<li><b>email:</b> <%= users.email %></li>
-				<li><b>phone:</b> <%= users.phone %></li>
-			</ul>
+			<div>
+				<ul>
+					<li>Email:</li>
+					<li>Contraseña:</li>
+					<li>Fecha de nacimiento:</li>
+					<li>DNI:</li>
+					<li>Foto de perfil:</li>
+
+				</ul>
+			</div>
 
 
 	<!-- footer -->
