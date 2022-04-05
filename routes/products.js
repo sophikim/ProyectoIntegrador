@@ -5,5 +5,8 @@ var router = express.Router();
 router.get('/allProducts', function(req, res) {
     res.render('product');
   });
+router.get('/add', function(req, res) {
+  res.render('product-add');
+});
 
 module.exports=router;
