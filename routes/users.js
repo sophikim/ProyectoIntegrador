@@ -1,5 +1,5 @@
 var express = require('express');
-var users = require('../database/users');
+var users = require('../database/data');
 var router = express.Router();
 
 const usersController = require('../controllers/usersController')
