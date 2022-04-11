@@ -1,10 +1,18 @@
-const { format } = require('morgan');
-var productosSustentables = require ('../database');
+//const { format } = require('morgan');
+var express = require('express');
+var router = express.Router();
+const database = require('../database/data');
 
-const controller = {
+
+const productsController = {
     index: function(req, res) {
-        res.render('index', { title: 'Products' });
+        res.render('product', {data: database}) 
+
+        
       }, 
+    productAdd: function(req,res) {
+      res.render('product-add')
+    }
 }
 
-module.exports=productosSustentables;
+module.exports= productsController;

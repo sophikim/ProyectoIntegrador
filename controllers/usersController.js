@@ -1,14 +1,18 @@
-var data = require('../database/data');
+var data = require('../database/data.js');
 
-const controller = {
-    profile: function (req, res){
-        res.render ('profile')
+const usersController = {
+    login: function(req,res){
+        res.render('login')
     },
-    profileEdit: function (req, res){
-        res.render ('profile-edit', {
-            user: data.user
-        })
-    }
+    register: function(req,res){
+        res.render('register')
+    },
+    profile: function(req,res){
+        res.render('profile')
+    },
+    profileEdit: function(req,res){
+        res.render('profile-edit')
+    },
 }
 
-module.exports = controller;
+module.exports = usersController;
