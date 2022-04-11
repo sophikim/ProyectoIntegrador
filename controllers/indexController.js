@@ -2,7 +2,7 @@ const database = require('../database/data');
 
 var indexController = {
     index: function(req,res) {
-        res.render('index')
+        res.render('index', {products: database.products}) 
     },
 
     searchResults: function(req,res) {

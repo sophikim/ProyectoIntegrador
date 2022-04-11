@@ -6,7 +6,7 @@ const database = require('../database/data');
 
 const productsController = {
     index: function(req, res) {
-        res.render('product', {data: database}) 
+        res.render('product', {data: database.products}) 
       }, 
     productAdd: function(req,res) {
       res.render('product-add')
