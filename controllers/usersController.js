@@ -1,4 +1,4 @@
-var data = require('../database/data.js');
+var data = require('../database/data');
 
 const usersController = {
     login: function(req,res){
@@ -11,7 +11,7 @@ const usersController = {
         res.render('profile')
     },
     profileEdit: function(req,res){
-        res.render('profile-edit')
+        res.render('profile-edit', {user: data.user})
     },
 }
 

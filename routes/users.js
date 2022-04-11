@@ -1,5 +1,5 @@
 var express = require('express');
-var users = require('../database/data');
+var user = require('../database/data');
 var router = express.Router();
 
 const usersController = require('../controllers/usersController')
@@ -8,6 +8,7 @@ const usersController = require('../controllers/usersController')
 router.get('/',);
 router.get('/login', usersController.login);
 router.get('/profile', usersController.profile);
-router.get('/profile-edit', usersController.profileEdit);
+router.get('/profile/edit', usersController.profileEdit);
+router.get('/register', usersController.register);
 
 module.exports = router;
