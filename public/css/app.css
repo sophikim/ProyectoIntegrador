@@ -127,7 +127,8 @@ height: 120px;
 }
 
 .main-navbar {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: none;
 }
 
@@ -264,9 +265,9 @@ height: 120px;
 
 /*====== Footer ======*/
 .main-footer {
-  color: #bbeb939a;
+  background-color: var(--light-green);
   padding: 20px 0;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .footer-data {
