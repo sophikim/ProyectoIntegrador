@@ -6,7 +6,7 @@ var indexController = {
     },
 
     searchResults: function(req,res) {
-        res.render('search-results')
+        res.render('search-results', {products: database.products})
     }
 }
 
