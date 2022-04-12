@@ -12,3 +12,5 @@ router.get('/profile/edit', usersController.profileEdit);
 router.get('/register', usersController.register);
 
 module.exports = router;
+
+//habia agregado a /profile, el controller que agregue pero lo saque porlas

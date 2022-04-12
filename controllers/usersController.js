@@ -13,6 +13,9 @@ const usersController = {
     profileEdit: function(req,res){
         res.render('profile-edit', {user: data.user})
     },
+    // profileProducts: function(req,res){
+    //     res.render('profile', {profileProducts: data.products})
+    // },
 }
 
 module.exports = usersController;
