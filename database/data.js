@@ -12,7 +12,9 @@ const products = [
     {name: "Peine de madera", description: "Piene de madera elaborado con madera de paraíso. No generan frizz.", pictureProduct:'/images/products/PeineMadera.png'},
     {name: "Repelente de insectos", description: "Off vegano. Reúne los aromas de varias de las plantas más utilizadas para repeler insectos.", pictureProduct:'/images/products/RepelenteDeInsectos.png'},
     {name: "Serum Facial", description: "Combina los aceites más aclamados en el mundo de la cosmética natural. Tiene propiedades nutritivas y regeneradoras.", pictureProduct:'/images/products/SerumFacialRegenerador.png'},
-    {name: "Shampoo Solido", description: "Shampoo no líquido. Forma más amigable de lavar tu cabello. Formulada con ingredientes que limpian suavemente y aporta brillo.", pictureProduct:'/images/products/ShampooSolido.png'}
+    {name: "Shampoo Solido", description: "Shampoo no líquido. Forma más amigable de lavar tu cabello. Formulada con ingredientes que limpian suavemente y aporta brillo.", pictureProduct:'/images/products/ShampooSolido.png'},
+    {name: "Protector Solar", description: "Crema bloqueadora que hidrata, nutre y protege de los rayos del sol. Hecha por aceites puros", pictureProduct:'/images/products/protectorSolar.png'},
+    {name: "Crema Analgésica", description: "Nuestra crema analgésica combina potentes ingredientes que logran calmar todo tipo de dolores, sean musculares, articulares, óseos o menstruales.", pictureProduct:'/images/products/cremaAnalgésica.png'}
 ];
 
 const comments = [
