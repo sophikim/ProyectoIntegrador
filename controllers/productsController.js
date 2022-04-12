@@ -7,8 +7,11 @@ const productsController = {
     index: function(req, res) {
         res.render('product', {data: data.products}) 
       }, 
-    productAdd: function(req,res) {
+    productAdd: function(req, res) {
       res.render('product-add', {data: data.products})
+    },
+    comments: function(req, res){
+      res.render('product', {data: data.comments})
     }
 }
 
