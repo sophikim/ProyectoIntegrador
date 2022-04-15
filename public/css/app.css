@@ -429,6 +429,12 @@ height: 120px;
   font-size: 1.7em;
 }
 
+#productEstatico {
+  font-size: 2.4em;
+  font-weight: 300;
+  margin-left: 110px;
+}
+
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;

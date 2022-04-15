@@ -8,14 +8,11 @@ const usersController = {
         res.render('register', {user: data.user})
     },
     profile: function(req,res){
-        res.render('profile', {user: data.user})
+        res.render('profile', {data: data.products}) 
     },
     profileEdit: function(req,res){
         res.render('profile-edit', {user: data.user})
-    },
-    // profileProducts: function(req,res){
-    //     res.render('profile', {profileProducts: data.products})
-    // },
+    }
 }
 
 module.exports = usersController;
