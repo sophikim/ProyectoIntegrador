@@ -1,17 +1,20 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;600&family=Bebas+Neue&family=Heebo:wght@200&display=swap');
 
 
 /*====== Variables ======*/
 :root {
   --light-green: #bbeb939a;
   --dark-blue: #03264C;
-  --light-blue: #1259c3;
+  --dark-green: rgb(11, 40, 11);
   --black: #000000;
   --green: #39b54a;
-  --base-font-family: 'Open Sans', sans-serif
+  --base-font-family: 'Open Sans', sans-serif;
+  --akshar-font-family: 'Akshar', sans-serif;
+  --bebasneue-font-family:'Bebas Neue', cursive;
+  --heebo--font-family: 'Heebo', sans-serif;
 }
-
 
 /*====== Basics ======*/
 * {
@@ -174,10 +177,11 @@ height: 120px;
 }
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 5.4em;
   font-weight: 400;
   color: var(--black);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: var(--bebasneue-font-family);
+  letter-spacing: 5px;
 }
 
 .product-box {
@@ -206,8 +210,9 @@ height: 120px;
 
 .product-box_data h2 {
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: 600;
   margin: 0;
+  font-family: var(--akshar-font-family);
 }
 
 .product-box_data span {
@@ -375,7 +380,7 @@ height: 120px;
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: var(--dark-green);
   font-size: 1.6em;
   color: #ffffff;
   padding: 15px;
@@ -430,9 +435,10 @@ height: 120px;
 }
 
 #productEstatico {
-  font-size: 2.4em;
-  font-weight: 300;
+  font-size: 35px;
+  font-weight: 700;
   margin-left: 110px;
+  font-family: var(--akshar-font-family);
 }
 
 /*====== Formularios ======*/
@@ -520,7 +526,7 @@ textarea.form-input {
 
   .left-navbar a:hover,
   .right-navbar a:hover {
-    color: var(--light-blue);
+    color: var(--dark-green);
   }
 
   .left-navbar li {
