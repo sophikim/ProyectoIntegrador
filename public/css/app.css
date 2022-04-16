@@ -5,15 +5,16 @@
 
 /*====== Variables ======*/
 :root {
-  --light-green: #bbeb939a;
+  --light-green: #adc19b9a;
+  --olive-green: darkolivegreen;
   --dark-blue: #03264C;
-  --dark-green: rgb(11, 40, 11);
+  --dark-green: rgb(7, 41, 7);
   --black: #000000;
   --green: #39b54a;
   --base-font-family: 'Open Sans', sans-serif;
   --akshar-font-family: 'Akshar', sans-serif;
   --bebasneue-font-family:'Bebas Neue', cursive;
-  --heebo--font-family: 'Heebo', sans-serif;
+  --heebo-font-family: 'Heebo', sans-serif;
 }
 
 /*====== Basics ======*/
@@ -119,7 +120,7 @@ height: 120px;
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
-  background-color: var(--dark-blue);
+  background-color: var(--dark-green);
   color: #ffffff;
   font-size: 1.5em;
   border: none;
@@ -230,6 +231,13 @@ height: 120px;
   height: 0;
   transition: 300ms;
   overflow: hidden;
+  font-family: var(--heebo-font-family);
+  font-weight: 600;
+}
+
+.product-box_data .comentario-box {
+  color: var(--olive-green);
+  font-weight: bold;
 }
 
 .product-box_data i {
@@ -259,7 +267,7 @@ height: 120px;
 }
 
 .product-box:hover p {
-  height: 36px;
+  height: 40px;
   margin-top: 15px;
 }
 
@@ -280,7 +288,7 @@ height: 120px;
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: var(--dark-green);
   font-size: 3.5em;
 }
 
@@ -336,6 +344,8 @@ height: 120px;
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: var(--heebo-font-family);
+  font-weight: 600;
 }
 
 .product-detail-price {
@@ -380,7 +390,7 @@ height: 120px;
 }
 
 .buy-now-button {
-  background-color: var(--dark-green);
+  background-color: var(--olive-green);
   font-size: 1.6em;
   color: #ffffff;
   padding: 15px;
@@ -409,6 +419,7 @@ height: 120px;
 }
 .comments {
   padding: 30px 15px 15px 0;
+  margin-left: 10px;
 }
 .comments article{
   margin-bottom: 7.5px;
@@ -421,6 +432,7 @@ height: 120px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  font-family: var(--heebo-font-family);
 }
 .comments .data{
   width: 85%;
@@ -431,7 +443,9 @@ height: 120px;
   margin-top: 0;
 }
 .comments .user{
-  font-size: 1.7em;
+  font-size: 1.5em;
+  font-family: var(--heebo-font-family);
+  color:var(--olive-green);
 }
 
 #productEstatico {
@@ -444,8 +458,10 @@ height: 120px;
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin: 10px 0;
+  font-family: var(--heebo-font-family);
+  font-weight: 800;
 }
 
 .form-input {
@@ -488,10 +504,19 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
-  padding: 10px 20px;
+  background-color: var(--dark-green);
+  padding: 5px 15px;
   border-radius: 4px;
   color: #fff;
+  font-family: var(--akshar-font-family);
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+
+.info-profile {
+  color: var(--dark-green);
+  font-family: var(--akshar-font-family);
+  font-size: 1.0em;
 }
 
 
