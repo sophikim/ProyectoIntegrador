@@ -1,6 +1,6 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;600&family=Bebas+Neue&family=Heebo:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;600&family=Bebas+Neue&family=Heebo:wght@200&family=Teko:wght@300;400;500&display=swap');
 
 
 /*====== Variables ======*/
@@ -10,11 +10,13 @@
   --dark-blue: #03264C;
   --dark-green: rgb(7, 41, 7);
   --black: #000000;
-  --green: #39b54a;
+  --green: #76BD1D;
+  --white: white;
   --base-font-family: 'Open Sans', sans-serif;
   --akshar-font-family: 'Akshar', sans-serif;
   --bebasneue-font-family:'Bebas Neue', cursive;
   --heebo-font-family: 'Heebo', sans-serif;
+  --teko-font-family: 'Teko', sans-serif;
 }
 
 /*====== Basics ======*/
@@ -46,6 +48,14 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  font-family: var(--teko-font-family) ;
+  font-weight: 400;
+ font-size: 1.3em;
+}
+
+a.header-productos {
+  color: var(--black);
+  font-size: 1.4em;
 }
 
 figure {
@@ -85,9 +95,10 @@ height: 120px;
 }
 
 .main-header_credit-link {
-  font-size: 1.5em;
+  font-size: 2.0em;
   margin-top: 20px;
   text-align: center;
+  color: var(--black);
 }
 
 .search-form {
@@ -210,7 +221,7 @@ height: 120px;
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
+  font-size: 1.9em;
   font-weight: 600;
   margin: 0;
   font-family: var(--akshar-font-family);
@@ -224,7 +235,7 @@ height: 120px;
 }
 
 .product-box_data p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   width: 100%;
   color: var(--black);
   margin: 0;
@@ -267,7 +278,7 @@ height: 120px;
 }
 
 .product-box:hover p {
-  height: 40px;
+  height: 45px;
   margin-top: 15px;
 }
 
