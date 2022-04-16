@@ -458,7 +458,7 @@ height: 120px;
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
-  font-size: 1.8em;
+  font-size: 1.6em;
   margin: 10px 0;
   font-family: var(--heebo-font-family);
   font-weight: 800;
