@@ -34,15 +34,14 @@
 			</div>
 			<% } %>
 		</div>
-
 		<!-- /Novedades -->
+
 		<!-- Más comentados -->
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
 					<h2 class="products-title">Más comentados</h2>
 				</div>
-				<!-- Show the "ultimos" products -->
 				
 					<% for(let i=0; i <products.length; i++) { %>
 						<% if ( products[i].cantComments >= 9) {%>	
@@ -62,8 +61,6 @@
 							</div>	
 					<% } %> <% }%>
 
-				<!-- quiero que sea random, o poner un condicional para que muestre los más comentados, 
-				pero cuando lo intente me tira como que no esta bien cerrada la funcion-->
 			</div>
 		</div>
 		<!-- /Más comentados -->
