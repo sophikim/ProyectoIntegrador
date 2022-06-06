@@ -10,26 +10,26 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form>
+			<form method="POST" action="/users/register">
 				<div class="mb-3">
 					<label for="email" class="form-label">Email</label>
-					<input type="email" class="form-control" id="email" aria-describedby="email">
+					<input type="email" class="form-control" id="username" name="username" aria-describedby="email">
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Contraseña</label>
-					<input type="password" class="form-control" id="password">
+					<input type="password" class="form-control" id="password" name="password">
 				</div>
 				<div class="mb-3">
 					<label for="birthdate" class="form-label">Fecha de nacimiento</label>
-					<input type="date" class="form-control" id="birthdate">
+					<input type="date" class="form-control" id="birthdate" name="birthdate">
 				</div>
 				<div class="mb-3">
 					<label for="DNI" class="form-label">DNI</label>
-					<input type="number" class="form-control" id="DNI">
+					<input type="number" class="form-control" id="dni" name="dni">
 				</div>
 				<div class="mb-3">
 					<label for="profilephoto" class="form-label">Foto de perfil</label>
-					<input type="file" class="form-control" id="profilephoto">
+					<input type="file" class="form-control" id="profile_photo" name="profile_photo">
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Submit</button>
