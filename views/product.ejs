@@ -22,16 +22,7 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for(let i=0; i <comments.length; i++) { %>
-                            <div>
-                                <img src="<%= comments[i].pictureProfile %>" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                    <strong> <a href="/users/profile"><%= comments[i].user %> </a> </strong>
-                                     <%= comments[i].comment %></p>
-                                </div>
-                            </div>
-                        <% } %>
+				
 						
 					</section>
 					<form class="form" action="/products" method="get">

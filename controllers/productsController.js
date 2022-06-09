@@ -6,19 +6,26 @@ let product = db.Product;
 
 const productsController = {
     index: function(req, res) {
-     /*product.findAll()
-      .then(function(Product){
+     product.findAll({
+       include: [
+         {association: "owner"},
+         {association: "comments"}
+       ]
+     }).then(function(Product){
         res.render('product', {
           product: Product,
           comments: Comments,
           user: User,
         })
         res.sent(Product) 
-      }) */
+      })
       
     },
     productAdd: function(req, res) {
-     /* res.render('product-add', {data: product.products}) */
+      // if(!req.session.user){
+      //   throw Error ('Not authorized')
+      // }
+     res.render('product-add') 
     }
 }
 

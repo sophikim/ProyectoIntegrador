@@ -17,6 +17,7 @@ router.get('/register', usersController.create);
 
 //rutas formulario de login
 router.get('/login', usersController.login);
+router.post('/login', usersController.authenticate)
 
 module.exports = router;
 
