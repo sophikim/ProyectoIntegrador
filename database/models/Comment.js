@@ -4,7 +4,7 @@ module.exports = function (sequelize, dataTypes) {
         id_comment: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER 
+            type: dataTypes.INTEGER
         },
         content: {
             type: dataTypes.STRING
@@ -18,23 +18,23 @@ module.exports = function (sequelize, dataTypes) {
     }
     let config = {
         tableName: 'comments',
-        underscored: true, 
+        underscored: true,
         timestamps: false
     }
 
     const Comment = sequelize.define(alias, cols, config);
 
-    Comment.associate = function(models) {
+    Comment.associate = function (models) {
         Comment.belongsTo(models.Product, {
-                    as: 'commentsProduct',
-                    foreignKey: 'id_product'
-                });
-        
+            as: 'commentsProduct',
+            foreignKey: 'id_product'
+        });
+
         Comment.belongsTo(models.User, {
-                    as: 'commentsUser',
-                    foreignKey: 'id_user'
-                })
-        }
+            as: 'commentsUser',
+            foreignKey: 'id_user'
+        })
+    }
 
     return Comment;
 }
