@@ -1,12 +1,11 @@
 //antes db era data 
 const bcrypt = require('bcryptjs');
 let db = require("../database/models");
-let user = db.User
 
 const usersController = {
         login: function (req, res) {
-          res.render('login', {
-                user: db.User
+          res.render('login', { 
+            title: 'Login' //esto no se si esta bien, porque ponemos esto
             })
         },
         authenticate: function(req, res, next) {

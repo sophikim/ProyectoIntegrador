@@ -15,9 +15,11 @@ const productsController = {
         res.render('product', {
           products: Product,
           // comments: Comments,
-          user: db.User,
+          //user: db.User,
         })
-        res.sent(Product) 
+        .catch(function(error){
+          res.send(error)
+        });
       })
     },
     productAdd: function(req, res) {

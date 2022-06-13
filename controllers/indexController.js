@@ -7,10 +7,9 @@ var indexController = {
       include: [
         {association: "owner"}
       ]
-    }).then(function(){
+    }).then(function(Product){
        res.render('index', {
-         products: db.Product,
-        //  comments: Comments
+         products: Product,
        })
      }) .catch(function (error) {
       res.send(error)

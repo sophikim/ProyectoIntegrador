@@ -13,7 +13,7 @@ router.get('/profile/edit', usersController.profileEdit);
 //register (esta lo muestra)
 router.get('/register', usersController.register);
 //store (esta procesa el formulario)
-router.get('/register', usersController.create);
+router.post('/register', usersController.create);
 
 //rutas formulario de login
 router.get('/login', usersController.login);
