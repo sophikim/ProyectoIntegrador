@@ -7,12 +7,14 @@ var indexController = {
       include: [
         {association: "owner"}
       ]
-    }).then(function(Product){
+    }).then(function(){
        res.render('index', {
          products: db.Product,
         //  comments: Comments
        })
-     })
+     }) .catch(function (error) {
+      res.send(error)
+    });
   },
   searchResults: function (req, res) {
     // db.Product.findAll({
