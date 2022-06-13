@@ -6,7 +6,7 @@ let user = db.User
 const usersController = {
         login: function (req, res) {
           res.render('login', {
-                user: data.user
+                user: db.User
             })
         },
         authenticate: function(req, res, next) {
@@ -34,12 +34,19 @@ const usersController = {
         },
         register: function (req, res) {
            res.render('register', {
-                user: data.user
+                user: db.User
             })
         },
-        create: function (req, res) {
-            if (!req.body.username) {
-                throw-Error('Falta completar nombre de usario.')
+        create: async function (req, res) {
+            try {
+                if (!req.body.username) {
+                    throw-Error('Falta completar nombre de usario.')
+                }
+                if (!req.body.password.length < 5) {
+                    throw-Error('Contraseña demasiado corta.')
+                }
+            } catch (error) {
+                return res.render ('register', {error: err.message});
             }
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
             db.User.create({

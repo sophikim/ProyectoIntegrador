@@ -8,18 +8,17 @@ const productsController = {
     index: function(req, res) {
      product.findAll({
        include: [
-         {association: "owner"},
-         {association: "comments"}
+         {association: "owner"}
+        //  {association: "comments"}
        ]
      }).then(function(Product){
         res.render('product', {
-          product: Product,
-          comments: Comments,
-          user: User,
+          products: Product,
+          // comments: Comments,
+          user: db.User,
         })
         res.sent(Product) 
       })
-      
     },
     productAdd: function(req, res) {
       // if(!req.session.user){

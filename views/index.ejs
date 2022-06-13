@@ -27,7 +27,7 @@
 						<article class="product-box_data">
 							<h2><%= products[i].name %></h2>
 							<p><%= products[i].description %></p>
-							<p class="comentario-box">Comentarios: <%= products[i].comments.cant_comments %></p>
+							<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 						</article>
 					</a>
 				</section>
@@ -44,17 +44,17 @@
 				</div>
 				
 					<% for(let i=0; i <products.length; i++) { %>
-						<% if ( products[i].cantComments >= 9) {%>	
+						<% if ( products[i].cantomments >= 9) {%>	
 						<div class="col-12 col-sm-6 col-lg-3">
 								<section class="product-box">
 									<a href="/products">
 										<figure class="product-box_image">
-											<img src="<%= products[i].pictureProduct %>" alt="cafetera moulinex">
+											<img src="<%= products[i].picture_product %>" alt="cafetera moulinex">
 										</figure>
 										<article class="product-box_data">
 											<h2><%= products[i].name %></h2>
 											<p><%= products[i].description %></p>
-											<p class="comentario-box">Comentarios: <%= products[i].cantComments %></p>
+											<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 										</article>
 									</a>
 								</section>
