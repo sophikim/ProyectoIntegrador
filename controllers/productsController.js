@@ -17,10 +17,10 @@ const productsController = {
           // comments: Comments,
           //user: db.User,
         })
-        .catch(function(error){
-          res.send(error)
-        });
       })
+      .catch(function(error){
+        res.send(error)
+      });
     },
     productAdd: function(req, res) {
       // if(!req.session.user){
