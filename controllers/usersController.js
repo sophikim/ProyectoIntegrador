@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 let db = require("../database/models");
+let errors = {}
 
 const usersController = {
         login: function (req, res) {
@@ -36,12 +37,17 @@ const usersController = {
             })
         },
         create: async function (req, res) {
-            console.log(req.body);
             try {
-                if (!req.body.username) {
-                    throw Error('Falta completar nombre de usario.')
-                }
-                
+                if (req.body.username == "") {
+                    errors.message = "Email no puede estar vacío."
+                    res.locals.errors = errors;
+                    return res.render('register')
+                };
+                if (req.body.username == db.User.findOne({ where: { username: req.body.username } })) {
+                    errors.message = "Email existente."
+                    res.locals.errors = errors;
+                    return res.render('register')
+                };
             } catch (error) {
                 return res.send(error);
             }
