@@ -49,7 +49,11 @@ const productsController = {
       } //si no incio sesion, no mostrar 
       req.body.id = req.session.user.id_user;
       if (req.file) req.body.cover = (req.file.path).replace('public', '');
-      db.Product.create(req.body)
+      db.Product.create({
+        name: req.body.nameProduct,
+        description: req.body.description,
+        picture_product: req.body.image,
+      })
           .then(function() {
               res.redirect('/')
           })
