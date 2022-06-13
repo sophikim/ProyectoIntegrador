@@ -11,11 +11,11 @@ const usersController = {
             db.User.findOne({ where: { username: req.body.username }})
                 .then(function(user) {
                     if (!user) throw Error('User not found.')
-                    if (hasher.compareSync(req.body.password, user.password)) {
+                    if (bcrypt.compareSync(req.body.password, user.password)) {
                         req.session.user = user;
-                        // if (req.body.rememberme) {  
-                        //     res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
-                        // }
+                        if (req.body.remember) {  
+                         res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                        }
                         res.redirect('/');
                     } else {
                         throw Error('Invalid credentials.')
@@ -41,10 +41,7 @@ const usersController = {
                 if (!req.body.username) {
                     throw Error('Falta completar nombre de usario.')
                 }
-                console.log(req.body.password)
-                if (req.body.password.length < 5) {
-                    throw Error('Contraseña demasiado corta.')
-                }
+                
             } catch (error) {
                 return res.send(error);
             }

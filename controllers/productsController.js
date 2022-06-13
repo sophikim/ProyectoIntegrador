@@ -8,7 +8,7 @@ const productsController = {
     index: function(req, res) {
      product.findAll({
        include: [
-         {association: "owner"}
+         {association: "owner"},
          {association: "comments"}
        ]
      }).then(function(Product){
@@ -16,7 +16,7 @@ const productsController = {
           products: Product,
           comments: Comments,
           user: db.User,
-        })
+        });
       })
       .catch(function(error){
         res.send(error)
@@ -38,11 +38,25 @@ const productsController = {
        });
      },
     productAdd: function(req, res) {
-      // if(!req.session.user){
-      //   throw Error ('Not authorized')
-      // }
+      if(!req.session.user){
+      throw Error ('Not authorized') 
+      }
      res.render('product-add') 
-    }
+    }, 
+    storeAdd: function(req, res) {
+      if (!req.session.user) { 
+          return res.render('product-add', { error: 'Not authorized.' });
+      } //si no incio sesion, no mostrar 
+      req.body.id = req.session.user.id_user;
+      if (req.file) req.body.cover = (req.file.path).replace('public', '');
+      db.Product.create(req.body)
+          .then(function() {
+              res.redirect('/')
+          })
+          .catch(function(error) {
+              res.send(error);
+          })
+  }
 }
 
 module.exports= productsController;

@@ -12,23 +12,23 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form>
+				<form method="post" action="/products/add" enctype="multipart/form-data">
 					<div class="mb-3">
 						<label for="image" class="form-label">Imagen</label>
-						<input type="file" class="form-control" id="image">
+						<input type="file" class="form-control" name="image" id="image">
 					</div>
 					<div class="mb-3">
 						<label for="nameProduct" class="form-label">Nombre del producto</label>
-						<input type="text" class="form-control" id="nameProduct">
+						<input type="text" class="form-control" name="nameProduct" id="nameProduct">
 					</div>
 					<div class="mb-3">
 						<label for="description" class="form-label">Descripción</label>
-						<input type="text" class="form-control" id="description">
+						<input type="text" class="form-control" name="description" id="description">
 					</div>
-					<div class="mb-3">
+					<!-- <div class="mb-3">
 						<label for="dateUpload" class="form-label">Fecha de carga</label>
-						<input type="date" class="form-control" id="dateUpload">
-					</div>
+						<input type="date" class="form-control" name="dateUpload" id="dateUpload"> 
+					</div> -->
 					
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>

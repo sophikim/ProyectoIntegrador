@@ -34,10 +34,10 @@ module.exports = function (sequelize, dataTypes){
             as: 'products',
             foreignKey: 'id_product'
         });
-        // User.hasMany(models.Comment, {
-        //     as: 'usersComments',
-        //     foreignKey: 'id_comments'
-        // })
+        User.hasMany(models.Comment, {
+        as: 'usersComments',
+        foreignKey: 'id_user'
+        })
     }
 
 
