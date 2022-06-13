@@ -9,19 +9,34 @@ const productsController = {
      product.findAll({
        include: [
          {association: "owner"}
-        //  {association: "comments"}
+         {association: "comments"}
        ]
      }).then(function(Product){
         res.render('product', {
           products: Product,
-          // comments: Comments,
-          //user: db.User,
+          comments: Comments,
+          user: db.User,
         })
       })
       .catch(function(error){
         res.send(error)
       });
     },
+    show: function(req, res) {
+      product.findByPk(req.params.id, {
+        include: {all: true, nested:true}
+      }).then(function(Product){
+          console.log(Product.dataValues);
+         res.render('product', {
+           products: Product,
+           comments: Comments,
+           user: db.User,
+         })
+       })
+       .catch(function(error){
+         res.send(error)
+       });
+     },
     productAdd: function(req, res) {
       // if(!req.session.user){
       //   throw Error ('Not authorized')
