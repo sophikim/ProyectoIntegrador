@@ -11,7 +11,21 @@ const usersController = {
         authenticate: function(req, res, next) {
             db.User.findOne({ where: { username: req.body.username }})
                 .then(function(user) {
-                    if (!user) throw Error('User not found.') //lo dejamos asi?
+                    // if (!user) throw Error('User not found.')
+                    // if (bcrypt.compareSync(req.body.password, user.password)) {
+                    //     req.session.user = user;
+                    //     if (req.body.remember) {  
+                    //      res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    //     }
+                    //     res.redirect('/');
+                    // } else {
+                    //     throw Error('Invalid credentials.')
+                    // } lo dejamos asi o...
+                    if (!user) {
+                        errors.message = "Email no existente."
+                        res.locals.errors = errors;
+                        return res.render('login')
+                    }
                     if (bcrypt.compareSync(req.body.password, user.password)) {
                         req.session.user = user;
                         if (req.body.remember) {  
@@ -19,7 +33,11 @@ const usersController = {
                         }
                         res.redirect('/');
                     } else {
-                        throw Error('Invalid credentials.')
+                        {
+                            errors.message = "Contraseña incorrecta."
+                            res.locals.errors = errors;
+                            return res.render('login')
+                        }
                     }
                 })
                 .catch(function (err) {
@@ -78,7 +96,7 @@ const usersController = {
         },
         profile: function (req, res) {
             res.render('profile', {
-                user: db.User,
+                users: db.User,
                 products: db.Product
             })
         },

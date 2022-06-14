@@ -53,7 +53,15 @@ const productsController = {
         name: req.body.nameProduct,
         description: req.body.description,
         picture_product: req.body.image,
-      })
+      }, 
+      // creo que el problema viene de que no incluimos esto pero no donde meterlo o como arreglarlo
+      // {
+      //   include: [
+      //     {association: "owner"},
+      //     {association: "comments"}
+      //   ]
+      // }
+      )
           .then(function() {
               res.redirect('/')
           })
