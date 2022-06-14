@@ -11,7 +11,7 @@ const usersController = {
         authenticate: function(req, res, next) {
             db.User.findOne({ where: { username: req.body.username }})
                 .then(function(user) {
-                    if (!user) throw Error('User not found.')
+                    if (!user) throw Error('User not found.') //lo dejamos asi?
                     if (bcrypt.compareSync(req.body.password, user.password)) {
                         req.session.user = user;
                         if (req.body.remember) {  
@@ -45,6 +45,16 @@ const usersController = {
                 };
                 if (req.body.username == db.User.findOne({ where: { username: req.body.username } })) {
                     errors.message = "Email existente."
+                    res.locals.errors = errors;
+                    return res.render('register')
+                };
+                if (req.body.dni.length != 8) {
+                    errors.message = "Incorrecta cantidad de dígitos del DNI."
+                    res.locals.errors = errors;
+                    return res.render('register')
+                };
+                if (req.body.password.length < 5) {
+                    errors.message = "La contraseña debe tener un mínimo de 5 carácteres."
                     res.locals.errors = errors;
                     return res.render('register')
                 };
