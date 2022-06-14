@@ -1,7 +1,7 @@
 <body>
 
 	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
+	<%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
@@ -44,12 +44,12 @@
 					<section class="product-box">
 						<a href="/products">
 							<figure class="product-box_image">
-								<img src=" <%= products[i].pictureProduct %>" alt="<%= products[i].name %>">
+								<img src=" <%= products[i].picture_product %>" alt="<%= products[i].name %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= products[i].name %></h2>
 								<p> <%= products[i].description %></p>
-								<p>Comentarios: <%= products[i].cantComments %></p>
+								<p>Comentarios: <%= products[i].cant_comments %></p>
 							</article>
 						</a>
 					</section>

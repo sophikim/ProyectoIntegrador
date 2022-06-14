@@ -7,7 +7,9 @@ const usersController = require('../controllers/usersController')
 router.get('/', usersController.profile);
 
 router.get('/profile', usersController.profile);
+
 router.get('/profile/edit', usersController.profileEdit);
+router.post('/profile/edit', usersController.update);
 
 //rutas formulario de registro 
 //register (esta lo muestra)

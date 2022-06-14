@@ -77,16 +77,29 @@ const usersController = {
                 })
         },
         profile: function (req, res) {
-           /*
             res.render('profile', {
-                products: data.products
-            }) */
+                user: db.User,
+                products: db.Product
+            })
         },
         profileEdit: function (req, res) {
-           /*
-            res.render('profile-edit', {
-                user: data.user
-            })  */
+            // db.User.findByPk(req.params.id)
+            // .then(function () {
+            //     res.render('profile-edit', { users: db.User });
+            // })
+            // .catch(function (error) {
+            //     res.send(error);
+            // })
+        },
+        update: function (req, res) {
+            // if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
+            // db.User.update(req.body, { where: { id: req.params.username } })
+            //     .then(function(book) {
+            //         res.redirect('/')
+            //     })
+            //     .catch(function(error) {
+            //         res.send(error);
+            //     })
         }
     };
 

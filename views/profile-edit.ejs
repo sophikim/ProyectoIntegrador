@@ -1,7 +1,7 @@
 <body>
 	
 	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
+	<%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -14,26 +14,26 @@
 
 			<div>
 
-				<form>
+				<form method="post">
 					<div class="mb-3">
 						<label for="username" class="form-label">Email: </label>
-						<input type="email" class="form-control" id="username">
+						<input type="email" class="form-control" id="username" name="username" value="<%= users.username %>">
 					</div>
 					<div class="mb-3">
 						<label for="password" class="form-label">Contraseña</label>
-						<input type="password" class="form-control" id="password">
+						<input type="password" class="form-control" id="password" name="password" value="<%= users.password %>">
 					</div>
 					<div class="mb-3">
 						<label for="remember" class="form-label">Fecha de nacimiento</label>
-						<input type="date" class="form-control" id="remember">
+						<input type="date" class="form-control" id="birthdate" name="birthdate" value="<%= users.birthdate %>">
 					</div>
 					<div class="mb-3">
 						<label for="remember" class="form-label">DNI</label>
-						<input type="number" class="form-control" id="remember">
+						<input type="number" class="form-control" id="dni" id="dni" value="<%= users.dni %>">
 					</div>
 					<div class="mb-3">
 						<label for="remember" class="form-label">Foto de perfil</label>
-						<input type="file" class="form-control" id="remember">
+						<input type="file" class="form-control" id="profile_photo" name="profile_photo" value="<%= users.profile_photo %>">
 					</div>
 		
 					<button type="submit" class="btn btn-primary">Submit</button>
