@@ -21,6 +21,8 @@ router.post('/register', usersController.create);
 router.get('/login', usersController.login);
 router.post('/login', usersController.authenticate)
 
+router.get('/logout', usersController.logout)
+
 module.exports = router;
 
 //habia agregado a /profile, el controller que agregue pero lo saque porlas
