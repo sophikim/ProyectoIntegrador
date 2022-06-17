@@ -12,15 +12,13 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 
 var app = express();
+
+//configurando express 
 app.use(session({
   secret: 'a_secret_word',
   resave: false,
   saveUninitialized: true
 }));
-app.use(function(req, res, next) {
-  res.locals.user = req.session.user;
-  next();
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +29,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Cookie middleware
 app.use(function(req, res, next) {
   if (!req.session.user && req.cookies.userId) {
     // Find the user
@@ -45,7 +45,11 @@ app.use(function(req, res, next) {
   }
 });
 
-
+//Session middleware 
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  next();
+});
 
 
 
