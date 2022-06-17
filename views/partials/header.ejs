@@ -52,7 +52,7 @@
     
                     <ul class="right-navbar">
                         <li><a href="/users/profile">
-                                ¡Hola, nombre usuario! <i class="fas fa-user"></i>
+                                ¡Hola, <%= user.username %>! <i class="fas fa-user"></i>
                             </a>
                         </li>
                         <li>
@@ -60,6 +60,10 @@
                                 <button class="logout" type="submit" href="/logout">
                                     Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                                 </button>
+                            
+                            <!-- yo sacaría el boton, y pondria un:
+                            <a class="nav-link" href="/logout"> Logout</a>
+                            -->
                             <!-- </form> -->
                         </li>
                         

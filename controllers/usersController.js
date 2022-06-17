@@ -11,43 +11,22 @@ const usersController = {
         authenticate: function(req, res, next) {
             db.User.findOne({ where: { username: req.body.username }})
                 .then(function(user) {
-                    // if (!user) throw Error('User not found.')
-                    // if (bcrypt.compareSync(req.body.password, user.password)) {
-                    //     req.session.user = user;
-                    //     if (req.body.remember) {  
-                    //      res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
-                    //     }
-                    //     res.redirect('/');
-                    // } else {
-                    //     throw Error('Invalid credentials.')
-                    // } lo dejamos asi o...
-                    if (!user) {
-                        errors.message = "Email no existente."
-                        res.locals.errors = errors;
-                        return res.render('login')
-                    }
+                    if (!user) throw Error('User not found.')
                     if (bcrypt.compareSync(req.body.password, user.password)) {
-                        req.session.user = user;
-                        if (req.body.remember) {  
-                         res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
-                        }
-                        res.redirect('/');
-                    } else {
-                        {
-                            errors.message = "Contraseña incorrecta."
-                            res.locals.errors = errors;
-                            return res.render('login')
-                        }
+                    req.session.user = user;
+                    if (req.body.remember) {  
+                    res.cookie('userId', user.id_user, { maxAge: 1000 * 60 * 60 * 7 })
                     }
-                })
-                .catch(function (err) {
-                    next(err)
+                    res.redirect('/');
+                    } else {
+                    throw Error('Invalid credentials.')
+                 } 
                 })
         },
-        logout: function(req, res){
+        logout: function(req, res, next){
             req.session.user = null;
             res.clearCookie('userId');
-            return res.redirect('/');
+            return res.redirect('/')
         },
         register: function (req, res) {
            res.render('register', {
