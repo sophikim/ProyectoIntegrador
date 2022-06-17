@@ -47,12 +47,12 @@ const productsController = {
       if (!req.session.user) { 
           return res.render('product-add', { error: 'Not authorized.' });
       } //si no incio sesion, no mostrar 
-      req.body.id = req.session.user.id_user;
+      req.body.id = req.session.user.id_user; //poder identifcar quien esta cargando el producto
       if (req.file) req.body.cover = (req.file.path).replace('public', '');
       db.Product.create({
-        name: req.body.nameProduct,
+        name: req.body.name,
         description: req.body.description,
-        picture_product: req.body.image,
+        picture_product: req.body.picture_product,
       }, 
       // creo que el problema viene de que no incluimos esto pero no donde meterlo o como arreglarlo
       // {
@@ -61,6 +61,7 @@ const productsController = {
       //     {association: "comments"}
       //   ]
       // }
+      // si pondemos db.Product.create(req.body) --> da el mismo error 
       )
           .then(function() {
               res.redirect('/')
