@@ -8,19 +8,23 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= products.name %> </h2> 
+			
+			<!-- BOTON DE EDITAR-->
 			<p class="product-detail-description">
-				<a href="/products/add">Editar</a>
+				<a href="/products/<%= products.id_product %>/edit">Editar</a>
 			</p>
+
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<h2 id="productEstatico">Shampoo sólido</h2>
+					<h2 id="productEstatico"> <%= products.name %> </h2>
 					<img src="./images/products/ShampooSolido.png" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						Shampoo no líquido. Forma más amigable de lavar tu cabello. Formulado con ingredientes que limpian suavemente y aportan brillo. </p>
+						<%= products.description %> </p>
 				</article>
 				<div class="col-12 col-lg-4">
+
 					<section class="comments">
 						<!-- <% for(let i=0; i <comments.length; i++) { %>
                             <div>
