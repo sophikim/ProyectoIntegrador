@@ -7,38 +7,30 @@ let product = db.Product;
 const productsController = {
   index: function (req, res) {
     product.findAll({
-        include: [{
-            association: "owner"
-          },
-          {
-            association: "comments"
-          }
+        include: [{association: "owner"},
+          {association: "comments"}
         ]
       }).then(function (Product) {
         res.render('product', {
           products: Product,
           comments: Comments,
-          user: db.User,
+          user: User,
         });
       })
       .catch(function (error) {
         res.send(error)
       });
   },
-  
+
+  //SHOW NO SE SI ESTA DEL TODO BIEN, HAY ALGUN ERROR CON COMMENTS 
   show: function (req, res) {
     product.findByPk(req.params.id, {
         include: {
           all: true,
           nested: true
         }
-      }).then(function (Product) {
-        console.log(Product.dataValues);
-        res.render('product', {
-          products: Product,
-          comments: Comments,
-          user: db.User,
-        })
+      }).then(function (products) {
+        res.render('product', { products });
       })
       .catch(function (error) {
         res.send(error)
@@ -95,6 +87,24 @@ const productsController = {
         res.send(error);
       })
   },
+
+  //Funcionalidad comentarios
+  comment: function(req, res) {
+    if (!req.session.user) { 
+        throw Error('Not authorized.')
+    }
+    // Set user from session user
+    req.body.id_user = req.session.user.id_user;
+    // Set product from url params
+    req.body.id_product = req.params.id_product;
+    db.Comment.create(req.body)
+        .then(function() {
+            res.redirect('/products/detail/' + req.params.id_product) //no se si products ahi esta bien 
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
+},
 }
 
 module.exports = productsController;

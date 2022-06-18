@@ -26,16 +26,16 @@
 				<div class="col-12 col-lg-4">
 
 					<section class="comments">
-						<!-- <% for(let i=0; i <comments.length; i++) { %>
+						<% for(let i=0; i <products.comments.length; i++) { %>
                             <div>
-                                <img src="<%= comments[i].pictureProfile %>" alt="">
+                                <img src="<%= products.comments[i].pictureProfile %>" alt="">
                                 <div class="data">
                                     <p class="user">
-                                    <strong> <a href="/users/profile"><%= comments[i].user %> </a> </strong>
-                                     <%= comments[i].comment %></p>
+                                    <strong> <a href="/users/profile"><%= products.comments[i].user %> </a> </strong>
+                                     <%= products.comments[i].comment %></p>
                                 </div>
                             </div>
-                        <% } %> -->
+                        <% } %>
 					</section>
 					<form class="form" action="/products" method="get">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
