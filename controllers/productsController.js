@@ -25,6 +25,7 @@ const productsController = {
         res.send(error)
       });
   },
+  
   show: function (req, res) {
     product.findByPk(req.params.id, {
         include: {
@@ -56,19 +57,10 @@ const productsController = {
       return res.render('product-add', {
         error: 'Not authorized.'
       });
-    } //si no incio sesion, no mostrar 
+    } 
     req.body.id_user = req.session.user.id_user; //poder identifcar quien esta cargando el producto
     if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
-    db.Product.create(req.body)
-        // creo que el problema viene de que no incluimos esto pero no donde meterlo o como arreglarlo
-        // {
-        //   include: [
-        //     {association: "owner"},
-        //     {association: "comments"}
-        //   ]
-        // }
-        // si pondemos db.Product.create(req.body) --> da el mismo error 
-      
+    db.Product.create(req.body) 
       .then(function () {
         res.redirect('/')
       })
