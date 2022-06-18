@@ -59,7 +59,7 @@ const productsController = {
   
   //Funcionalidad edit 
   edit: function (req, res) { 
-    db.Product.findByPk(req.params.id) 
+    db.Product.findByPk(req.params.id) //en vez de id, no va id_product?
       .then(function (products) {
         res.render('product-edit', {
           products

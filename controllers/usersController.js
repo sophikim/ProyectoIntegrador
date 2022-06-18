@@ -34,7 +34,7 @@ const usersController = {
             })
         },
         create: async function (req, res) {
-            if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
+            if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
             try {
                 if (req.body.username == "") {
                     errors.message = "Email no puede estar vacío."
