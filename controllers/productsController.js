@@ -11,11 +11,7 @@ const productsController = {
           {association: "comments"}
         ]
       }).then(function (Product) {
-        res.render('product', {
-          products: Product,
-          comments: Comments,
-          user: User,
-        });
+        res.render('product', {products});
       })
       .catch(function (error) {
         res.send(error)
@@ -24,7 +20,7 @@ const productsController = {
 
   //SHOW NO SE SI ESTA DEL TODO BIEN, HAY ALGUN ERROR CON COMMENTS 
   show: function (req, res) {
-    product.findByPk(req.params.id, {
+    db.Product.findByPk(req.params.id, {
         include: {
           all: true,
           nested: true
@@ -77,7 +73,7 @@ const productsController = {
     if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
     db.Product.update(req.body, {
         where: {
-          id: req.params.id_product
+          id_product: req.params.id_product ///no se si es id_product o solo id, creo q como esta esta bien igual
         }
       })
       .then(function (products) {
