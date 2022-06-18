@@ -59,7 +59,7 @@ const productsController = {
   
   //Funcionalidad edit 
   edit: function (req, res) { 
-    db.Product.findByPk(req.params.id_product) 
+    db.Product.findByPk(req.params.id) 
       .then(function (products) {
         res.render('product-edit', {
           products
@@ -73,7 +73,7 @@ const productsController = {
     if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
     db.Product.update(req.body, {
         where: {
-          id_product: req.params.id_product ///no se si es id_product o solo id, creo q como esta esta bien igual
+          id: req.params.id///no se si es id_product o solo id, creo q como esta esta bien igual
         }
       })
       .then(function (products) {
