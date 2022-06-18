@@ -58,7 +58,7 @@ const productsController = {
       });
     } //si no incio sesion, no mostrar 
     req.body.id = req.session.user.id_user; //poder identifcar quien esta cargando el producto
-    if (req.file) req.body.cover = (req.file.path).replace('public', '');
+    if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
     db.Product.create({
           name: req.body.name,
           description: req.body.description,
