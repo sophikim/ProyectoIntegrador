@@ -3,7 +3,7 @@
 	<!-- Header -->
 	<%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
-
+ 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
@@ -12,7 +12,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= users.username %>
+					<h1 class="main-title"> <%= user.username %>
 						<a href="users/profile/edit">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -20,7 +20,7 @@
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<div>
-					<ul class="info-profile">
+					<ul class="info-profile"> /
 						<li>4 productos</li>
 						<li>100 seguidores</li>
 						<li>245 comentarios</li>
@@ -43,12 +43,12 @@
 					<section class="product-box">
 						<a href="/products">
 							<figure class="product-box_image">
-								<img src=" <%= products.picture_product %>" alt="<%= products.name %>">
+								<img src=" <%= user.products.picture_product %>" alt="<%= user.products.name %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= products.name %></h2>
-								<p> <%= products.description %></p>
-								<p>Comentarios: <%= products.cant_comments %></p>
+								<h2><%= user.products.name %></h2>
+								<p> <%= user.products.description %></p>
+								<p>Comentarios: <%= user.products.cant_comments %></p>
 							</article>
 						</a>
 					</section>

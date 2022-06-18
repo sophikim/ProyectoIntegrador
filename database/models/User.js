@@ -32,12 +32,12 @@ module.exports = function (sequelize, dataTypes){
     User.associate = function(models) {
         User.hasMany(models.Product, {
             as: 'products',
-            foreignKey: 'id_product'
+            foreignKey: 'id_user'
         });
         User.hasMany(models.Comment, {
         as: 'usersComments',
         foreignKey: 'id_user'
-        })
+        }) //estab última pehuen no la tiene no entiendo porque, porque encesitas las dos 
     }
 
 

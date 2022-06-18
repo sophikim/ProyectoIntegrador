@@ -74,12 +74,18 @@ const usersController = {
                     res.send(error);
                 })
         },
-        profile: function (req, res) {
-            res.render('profile', {
-                users: db.User,
-                products: db.Product
-            })
+     
+        profile: function(req, res) {
+            db.User.findByPk(req.session.user.id_user, { include: [ { association: 'products' } ] })
+                .then(function (user) {
+                    res.render('profile', { user });
+                })
+                .catch(function (error) {
+                    res.send(error)
+                });
         },
+
+
         profileEdit: function (req, res) {
             // db.User.findByPk(req.params.id)
             // .then(function () {
