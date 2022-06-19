@@ -13,8 +13,8 @@ router.get('/', usersController.profile);
 
 router.get('/profile', usersController.profile);
 
-router.get('/profile/edit', usersController.profileEdit);
-router.post('/profile/edit', usersController.update);
+router.get('/:id/edit', usersController.profileEdit);
+router.post('/:id/edit', upload.single('profile_photo'), usersController.update);
 
 //rutas formulario de registro 
 //register (esta lo muestra)

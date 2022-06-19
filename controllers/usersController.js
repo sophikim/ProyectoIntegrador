@@ -87,23 +87,23 @@ const usersController = {
 
 
         profileEdit: function (req, res) {
-            // db.User.findByPk(req.params.id)
-            // .then(function () {
-            //     res.render('profile-edit', { users: db.User });
-            // })
-            // .catch(function (error) {
-            //     res.send(error);
-            // })
+            db.User.findByPk(req.params.id)
+            .then(function (users) {
+             res.render('profile-edit', { users });
+            })
+            .catch(function (error) {
+            res.send(error);
+            })
         },
         update: function (req, res) {
-            // if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
-            // db.User.update(req.body, { where: { id: req.params.username } })
-            //     .then(function(book) {
-            //         res.redirect('/')
-            //     })
-            //     .catch(function(error) {
-            //         res.send(error);
-            //     })
+            if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
+            db.User.update(req.body, { where: { id: req.params.id } })
+            .then(function(users) {
+            res.redirect('/')
+             })
+            .catch(function(error) {
+            res.send(error);
+            })
         }
     };
 
