@@ -37,7 +37,7 @@
                             </div>
                         <% } %>
 					</section>
-					<form class="form" action="/products" method="get">
+					<form class="form" action="/products/<%= products.id_product %>/comment" method="post">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>

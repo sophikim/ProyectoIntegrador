@@ -92,10 +92,10 @@ const productsController = {
     // Set user from session user
     req.body.id_user = req.session.user.id_user;
     // Set product from url params
-    req.body.id_product = req.params.id_product;
+    req.body.id_product = req.params.id;
     db.Comment.create(req.body)
         .then(function() {
-            res.redirect('/products/detail/' + req.params.id_product) //no se si products ahi esta bien 
+            res.redirect('/products/detail/' + req.params.id) //no se si products ahi esta bien 
         })
         .catch(function(error) {
             res.send(error);
