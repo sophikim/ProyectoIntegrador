@@ -16,6 +16,6 @@ router.post('/add', upload.single('picture_product'), productsController.storeAd
 router.get('/:id/edit',  productsController.edit);
 router.post('/:id/edit', upload.single('picture_product'),  productsController.update);
 
-router.post('/:id/delete', productsController.comment);
+router.post('/:id/comment', productsController.comment);
 
 module.exports = router;
