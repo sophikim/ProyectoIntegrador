@@ -18,12 +18,15 @@
 <header class="main-header">
     <div class="container">
          <div class="row align-items-center">
+
+            <!--LOGO-->
             <div class="col-5 col-md-2">
                 <a href="/" class="main-header_home-link">
                     <img class="logo" src="/images/logo.webp">
                 </a>
             </div>
 
+            <!--BUSCADOR-->
             <div class="col-7 col-md-6">
                 <form action="/search-results" method="GET" class="search-form">
                     <input type="text" name="criteria" id="criteria" placeholder="Buscar productos, marcas y más" class="search-form_input">
@@ -31,6 +34,7 @@
                 </form>
             </div>
 
+            <!--BANNER DE TODAS LAS OPCIONES EN UN SOLO LUGAR (LO SACARÍA)-->
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd"></i>
@@ -43,6 +47,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
+            <!--HEADER PARA USARIO LOGEADO-->
             <% if(locals.user) { %>
                 <nav class="main-navbar">
                     <ul class="left-navbar">
@@ -57,7 +62,7 @@
                         </li>
                         <li>
                             <!-- <form action="/" method="get"> -->
-                                <a class="logout" type="submit" href="/logout">
+                                <a class="logout" type="submit" href="/users/logout">
                                     Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             
@@ -70,6 +75,8 @@
                     </ul>
                 </nav>
             <% } else { %>
+
+            <!-- HEADER PARA USARIO DESLOGEADO-->
                 <nav class="main-navbar">
                     <ul class="left-navbar">
                         <li><a href="/" class="header-productos">Todos los productos</a></li>
