@@ -6,15 +6,31 @@
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
+		
+		<!--TITULO Y BOTON DE EDITAR-->
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= products.name %> </h2> 
 			
 			<!-- BOTON DE EDITAR-->
-			<p class="product-detail-description">
-				<a href="/products/<%= products.id_product %>/edit">Editar</a>
+			
+			
+			<% if (locals.user && user.id_user == products.id_user) { %>
+				<p class="product-detail-description">
+                <a href="/products/<%= products.id_product %>/edit">Editar</a>
 			</p>
+              <% } %>
+	
+			<!-- BOTON DE BORRAR-->
+			
+			<% if (locals.user && user.id_user == products.id_user) { %>
+				<p class="product-detail-description">
+				<a href="/products/<%= products.id_product %>/delete">Borrar</a>
+			</p>
+			  <% } %>
 
 		</div>
+
+		<!--DETALLE DE PRODUCTO-->
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -23,6 +39,8 @@
 					<p class="product-detail-description">
 						<%= products.description %> </p>
 				</article>
+
+				<!--SECCION COMENTARIOS-->
 				<div class="col-12 col-lg-4">
 
 					<section class="comments">
