@@ -73,7 +73,7 @@ const productsController = {
     if (req.file) req.body.picture_product = (req.file.path).replace('public', '');
     db.Product.update(req.body, {
         where: {
-          id: req.params.id///no se si es id_product o solo id, creo q como esta esta bien igual
+          id_product: req.params.id
         }
       })
       .then(function (products) {

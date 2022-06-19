@@ -14,7 +14,7 @@
 
 			<div>
 
-				<form method="post">
+				<form method="post" action="/users/<%= users.id_user %>/edit" enctype="multipart/form-data">
 					<div class="mb-3">
 						<label for="username" class="form-label">Email: </label>
 						<input type="email" class="form-control" id="username" name="username" value="<%= users.username %>">
