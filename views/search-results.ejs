@@ -22,7 +22,7 @@
 				  <% } %>
 				  <h2><%= products[i].name %></h2>
 				  <p>Description: <%= products[i].description %></p>
-				  <p>Owner: <a href="/users/<%= products[i].owner?.id_user %>"><%= products[i].owner?.username %></a></p>
+				  <p>Owner: <a href="/users/<%= products[i].owner?.id_user %>"><img src="<%= products[i].owner.profile_photo %>" class="profile_pic"><%= products[i].owner?.username %></a></p>
 				  <p><a class="btn btn-secondary" href="/products/detail/ <%=products[i].id_product %>">View details »</a></p>
 				</h2>
 				<br>

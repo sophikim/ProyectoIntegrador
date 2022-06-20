@@ -293,6 +293,13 @@ height: 120px;
   margin: 5px;
 }
 
+.profile_pic{
+  height: 20px;
+  width: auto;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
 /*====== Footer ======*/
 .main-footer {
   background-color: var(--light-green);
