@@ -61,7 +61,7 @@ const productsController = {
 
   delete: function (req, res) {
     if (!req.session.user) {
-      throw Error('Not authorized.')
+      throw Error(res.redirect('/products/detail/'+  req.params.id)) //en caso de error te redirige al usario a la página de detalle de ese producto
     }
     db.Product.destroy({ where: { id_product: req.params.id } })
       .then(function () {
