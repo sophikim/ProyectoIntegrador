@@ -14,7 +14,11 @@
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= user.username %>
 						<a href="/users/<%= user.id_user %>/edit">
-							<i class="fas fa-cog"></i>
+							<% if(locals.user) { %>
+								<i class="fas fa-cog"></i>
+							<% } %>
+							<!-- aca puse para que solo lo vea si esta iniciado sesion pero creo que deberia ser con el compare
+							para que solo le muestre si el iniciado sesion concuerda con su perfil?? -->
 						</a>
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
