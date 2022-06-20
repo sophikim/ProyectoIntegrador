@@ -4,7 +4,10 @@ let errors = {}
 
 const usersController = {
         login: function (req, res) {
-          res.render('login', { 
+            if (req.session.user)  {
+                throw Error(res.redirect('/')) //la pagina de login sera solo accesible para los usarios deslogeados
+            }
+            res.render('login', { 
             title: 'Login' //esto no se si esta bien, porque ponemos esto
             })
         },
@@ -29,7 +32,10 @@ const usersController = {
             return res.redirect('/')
         },
         register: function (req, res) {
-           res.render('register', {
+            if (req.session.user)  {
+                throw Error(res.redirect('/')) //la pagina de registracion sera solo accesible para los usarios deslogeados
+            }
+            res.render('register', {
                 user: db.User
             })
         },
