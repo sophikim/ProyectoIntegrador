@@ -7,7 +7,8 @@ var indexController = {
     product.findAll({
       include: [{
         association: "owner"
-      }]
+      }],
+      order: [ ['id_product', 'DESC']]
     }).then(function (Product) {
       res.render('index', {
         products: Product,
