@@ -54,9 +54,7 @@ const usersController = {
         if (req.session.user) {
             throw Error(res.redirect('/')) //la pagina de registracion sera solo accesible para los usarios deslogeados
         }
-        res.render('register', {
-            user: db.User
-        })
+        res.render('register')
     },
     create: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
