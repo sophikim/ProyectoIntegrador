@@ -289,6 +289,10 @@ height: 120px;
   box-shadow: 0 0 5px var(--green);
 }
 
+.epigrafe{
+  margin: 5px;
+}
+
 /*====== Footer ======*/
 .main-footer {
   background-color: var(--light-green);

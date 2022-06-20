@@ -25,7 +25,12 @@ const usersController = {
 
         db.User.findOne({ where: { username: req.body.username } })
             .then(function (user) {
-                if (!user) throw Error('Usuario no encontrado.')
+                if (!user) {
+                    errors.message = "Usuario no encontrado."
+                    res.locals.errors = errors;
+                    return res.render('login')
+                };
+                // throw Error('Usuario no encontrado.')
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                     req.session.user = user;
                     if (req.body.remember) {
