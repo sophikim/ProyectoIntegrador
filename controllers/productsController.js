@@ -74,7 +74,10 @@ const productsController = {
 
   //Funcionalidad edit 
   edit: function (req, res) {
-    db.Product.findByPk(req.params.id) //en vez de id, no va id_product?
+    if (!req.session.user) {
+      throw Error('No autorizado. Por favor, inicie sesión.') 
+    }
+    db.Product.findByPk(req.params.id) 
       .then(function (products) {
         res.render('product-edit', {
           products
@@ -102,7 +105,7 @@ const productsController = {
   //Funcionalidad comentarios
   comment: function (req, res) {
     if (!req.session.user) {
-      throw Error('Not authorized.')
+      throw Error(res.redirect('/users/login')) //en caso de error te redirige al usario a la página de login 
     }
     // Set user from session user
     req.body.id_user = req.session.user.id_user;
