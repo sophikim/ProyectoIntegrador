@@ -33,7 +33,10 @@ const usersController = {
                     }
                     res.redirect('/');
                 } else {
-                    throw Error('Credenciales no válidas.')
+                    errors.message = "Contraseña incorrecta."
+                    res.locals.errors = errors;
+                    return res.render('login')
+                    // throw Error('Credenciales no válidas.')
                 }
             })
     },
