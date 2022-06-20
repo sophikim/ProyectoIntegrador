@@ -9,8 +9,7 @@ const productsController = {
     product.findAll({
       include: [{ association: "owner" },
       { association: "comments" }
-      ],
-      order: [ ['created_at', 'DESC']]
+      ]
     }).then(function (Product) {
       res.render('product', { products });
     })
@@ -25,7 +24,7 @@ const productsController = {
       include: {
         all: true,
         nested: true
-      }
+      }, 
     }).then(function (products) {
       res.render('product', { products });
     })

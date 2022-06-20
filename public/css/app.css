@@ -301,6 +301,7 @@ height: 120px;
   border-radius: 5px;
 }
 
+
 /*====== Footer ======*/
 .main-footer {
   background-color: var(--light-green);
@@ -371,6 +372,14 @@ height: 120px;
   line-height: 1.5;
   font-family: var(--heebo-font-family);
   font-weight: 600;
+}
+
+.product-detail-username {
+  padding: 15px 15px 15px 40px;
+  font-size: 1.8em;
+  line-height: 1.5;
+  font-family: var(--akshar-font-family);
+  color: rgb(67, 67, 6);
 }
 
 .product-detail-price {
@@ -543,6 +552,7 @@ textarea.form-input {
   font-family: var(--akshar-font-family);
   font-size: 1.0em;
 }
+
 
 
 /*====== Media-Queries ======*/
