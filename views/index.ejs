@@ -26,7 +26,7 @@
 						</figure>
 						<article class="product-box_data">
 							<h2><%= products[i].name %></h2>
-							<h3 class="epigrafe"> <img src="<%= products[i].owner.profile_photo%>" class="profile_pic"> <a><%= products[i].owner.username %></a></h3>
+							<h3 class="epigrafe"> <img src="<%= products[i].owner.profile_photo%>" class="profile_pic"> <%= products[i].owner.username %></h3>
 							<p><%= products[i].description %></p>
 							<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 							

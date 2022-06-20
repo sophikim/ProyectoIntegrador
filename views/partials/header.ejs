@@ -15,6 +15,7 @@
     <!-- Own Stylesheet -->
     <link rel="stylesheet" href="/css/app.css">
 </head>
+
 <!-- Header -->
 <header class="main-header">
     <div class="container">
@@ -40,8 +41,7 @@
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd"></i>
-                    Todas las opiniones en un solo lugar.
-                    <!-- lo podriamos cambiar a algo tipo: Descubre los mejores productos ecológicos -->
+                    Descubre los mejores productos ecológicos
                 </a>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <!--HEADER PARA USARIO LOGEADO-->
+        <!--HEADER PARA USARIO LOGUEADO-->
         <% if(locals.user) { %>
             <nav class="main-navbar">
                 <ul class="left-navbar">
@@ -61,7 +61,7 @@
                 <ul class="right-navbar">
                     <li>
                         <a href="/users/profile">
-                            ¡ Hola <%= user.username %> ! <i class="fas fa-user"></i>
+                            ¡Hola <%= user.username %>! <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li>
@@ -72,7 +72,7 @@
             </nav>
             <% } else { %>
 
-                <!-- HEADER PARA USARIO DESLOGEADO-->
+                <!-- HEADER PARA USARIO DESLOGUEADO-->
                 <nav class="main-navbar">
                     <ul class="left-navbar">
                         <li><a href="/" class="header-productos">Todos los productos</a></li>

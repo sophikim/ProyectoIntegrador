@@ -9,7 +9,8 @@ const productsController = {
     product.findAll({
       include: [{ association: "owner" },
       { association: "comments" }
-      ]
+      ],
+      order: [ ['created_at', 'DESC']]
     }).then(function (Product) {
       res.render('product', { products });
     })
@@ -114,7 +115,6 @@ const productsController = {
     db.Comment.create(req.body)
       .then(function () {
         res.redirect('/products/detail/' + req.params.id) //no se si products ahi esta bien 
-        // order: [ ['id_comment', 'DESC']]
       })
       .catch(function (error) {
         res.send(error);

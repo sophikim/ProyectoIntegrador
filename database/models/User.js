@@ -26,6 +26,12 @@ module.exports = function (sequelize, dataTypes){
         },
         updated_at: {
             type: dataTypes.DATE
+        },
+        cant_seguidores: {
+            type: dataTypes.INTEGER
+        },
+        cant_comments: {
+            type: dataTypes.INTEGER
         }
     }
     let config = {

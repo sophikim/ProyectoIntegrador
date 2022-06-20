@@ -13,21 +13,22 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= user.username %>
-						<a href="/users/<%= user.id_user %>/edit">
-							<% if(locals.user) { %>
+
+						<% if (locals.user && user.id_user == user.id_user) { %>
+							
+							<a href="/users/<%= user.id_user %>/edit">
 								<i class="fas fa-cog"></i>
-							<% } %>
-							<!-- aca puse para que solo lo vea si esta iniciado sesion pero creo que deberia ser con el compare
-							para que solo le muestre si el iniciado sesion concuerda con su perfil?? -->
-						</a>
+							</a>
+						
+						<% } %>
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<div>
 					<ul class="info-profile">
 						<li> <%= user.products.length %> productos</li>
-						<li>100 seguidores</li>
-						<li> 10 comentarios</li>
+						<li> <%= user.cant_seguidores %> seguidores</li>
+						<li> <%= user.cant_comments %> comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -46,7 +47,7 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 
 				<section class="product-box">
-					<a href="/products/detail/<%= user.products[i].id_product %>">
+					<a href="/products/detail">
 						
 						<figure class="product-box_image">
 							<% if (user.products[i].picture_product) { %>
