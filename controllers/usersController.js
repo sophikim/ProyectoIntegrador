@@ -51,8 +51,8 @@ const usersController = {
                     res.locals.errors = errors;
                     return res.render('register')
                 };
-                if (req.body.password.length < 5) {
-                    errors.message = "La contraseña debe tener un mínimo de 5 carácteres."
+                if (req.body.password.length < 3) {
+                    errors.message = "La contraseña debe tener un mínimo de 3 carácteres."
                     res.locals.errors = errors;
                     return res.render('register')
                 };
