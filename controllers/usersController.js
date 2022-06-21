@@ -113,11 +113,11 @@ const usersController = {
         })
     },
     profileEdit: function (req, res) {
-        if (req.session.user != req.params.id_user) {
-            throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
-        }
         if (!req.session.user) {
             throw Error(res.redirect('/')) //la pagina de edit no sera accesible si no esta logueado
+        }
+        if (req.session.me != req.params.id_user) {
+            throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
         }
         db.User.findByPk(req.params.id)
             .then(function (users) {
