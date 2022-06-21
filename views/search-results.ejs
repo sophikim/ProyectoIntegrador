@@ -13,7 +13,7 @@
 			<% if (products.length == 0) { %> <h2>No hay resultados para su criterio de búsqueda. </h2> <%} %>
 			
 			<% for (let i= 0; i < products.length; i++) { %>
-				<div class="col-lg-4">
+				<div class="col-lg-4" id="resultados">
 					<h2 class="col-12"> 
 					<% if (products[i].picture_product) { %>
 					<img src="<%= products[i].picture_product %>" width="120"/>
@@ -28,8 +28,8 @@
 				<br>
 				</div>
 			  <% } %>
-			
-
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%- include('./partials/footer.ejs') %> 
