@@ -47,7 +47,7 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 
 				<section class="product-box">
-					<a href="/products/detail">
+					<a href="/products/detail/<%= user.products[i].id_product %>">
 						
 						<figure class="product-box_image">
 							<% if (user.products[i].picture_product) { %>
@@ -64,6 +64,8 @@
 							<p> <%= user.products[i].description %></p>
 							<p>Comentarios: <%= user.products[i].cant_comments %></p>
 						</article>
+
+						<!--/detail/:id-->
 					
 					</a>
 				</section>
