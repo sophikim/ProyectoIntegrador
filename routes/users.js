@@ -35,4 +35,4 @@ router.get('/logout', usersController.logout)
 
 module.exports = router;
 
-//habia agregado a /profile, el controller que agregue pero lo saque porlas
+

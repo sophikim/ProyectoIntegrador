@@ -1,10 +1,9 @@
 let db = require("../database/models");
 var op = db.Sequelize.Op;
-let product = db.Product //creo que esto lo podemos borrar, me da miedo igual jjajaja asiq por las dudas todavia no lo toco
 
 var indexController = {
   index: function (req, res) {
-    product.findAll({
+    db.Product.findAll({
       include: [{
         association: "owner"
       }],

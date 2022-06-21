@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
 let db = require("../database/models");
-let product = db.Product;
-
 
 const productsController = {
   index: function (req, res) {
-    product.findAll({
+    db.Product.findAll({
       include: [{ association: "owner" },
       { association: "comments" }
       ]
@@ -59,7 +57,6 @@ const productsController = {
   },
 
   //Funcionalidad delete 
-
   delete: function (req, res) {
     if (!req.session.user) {
       throw Error(res.redirect('/products/detail/'+  req.params.id)) //en caso de error te redirige al usario a la página de detalle de ese producto
@@ -114,7 +111,7 @@ const productsController = {
     req.body.id_product = req.params.id;
     db.Comment.create(req.body)
       .then(function () {
-        res.redirect('/products/detail/' + req.params.id) //no se si products ahi esta bien 
+        res.redirect('/products/detail/' + req.params.id)
       })
       .catch(function (error) {
         res.send(error);

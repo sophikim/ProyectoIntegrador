@@ -49,7 +49,7 @@ module.exports = function (sequelize, dataTypes){
         User.hasMany(models.Comment, {
         as: 'usersComments',
         foreignKey: 'id_user'
-        }) //estab última pehuen no la tiene no entiendo porque, porque encesitas las dos 
+        }) 
     }
 
 
