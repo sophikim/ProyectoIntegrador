@@ -51,7 +51,7 @@
         </button>
 
         <!--HEADER PARA USARIO LOGUEADO-->
-        <% if(locals.user) { %>
+        <% if(locals.me) { %>
             <nav class="main-navbar">
                 <ul class="left-navbar">
                     <li><a href="/" class="header-productos">Todos los productos</a></li>
@@ -61,7 +61,7 @@
                 <ul class="right-navbar">
                     <li>
                         <a href="/users/profile">
-                            ¡Hola <%= user.username %>! <i class="fas fa-user"></i>
+                            ¡Hola <%= me.username %>! <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li>

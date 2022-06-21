@@ -494,6 +494,7 @@ height: 120px;
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
+  margin-right: 15px;
   font-family: var(--heebo-font-family);
   font-weight: 800;
 }
@@ -521,6 +522,9 @@ textarea.form-input {
   padding: 15px;
 }
 
+#recordar{
+  font-size: 11.5px;
+}
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;

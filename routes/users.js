@@ -9,12 +9,17 @@ const usersController = require('../controllers/usersController')
 
 
 /* GET users listing. */
-router.get('/', usersController.profile);
+router.get('/', usersController.myProfile);
 
-router.get('/profile', usersController.profile);
+// profile propio
+
+router.get('/profile', usersController.myProfile);
 
 router.get('/:id/edit', usersController.profileEdit);
 router.post('/:id/edit', upload.single('profile_photo'), usersController.update);
+
+// otros perfiles
+// router.get('/:id', usersController.profile);
 
 //rutas formulario de registro 
 //register (esta lo muestra)
