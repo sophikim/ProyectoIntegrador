@@ -7,9 +7,7 @@ const usersController = {
         if (req.session.user) {
             throw Error(res.redirect('/')) //la pagina de login sera solo accesible para los usarios deslogeados
         }
-        res.render('login', {
-            title: 'Login' //esto no se si esta bien, porque ponemos esto
-        })
+        res.render('login')
     },
     authenticate: function (req, res, next) {
         try {
