@@ -14,7 +14,7 @@
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= user.username %>
 
-						<% if (locals.me && user.id_user == user.id_user) { %>
+						<% if (locals.me && me.id_user == user.id_user) { %>
 							
 							<a href="/users/<%= me.id_user %>/edit">
 								<i class="fas fa-cog"></i>

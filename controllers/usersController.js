@@ -127,8 +127,9 @@ const usersController = {
     update: function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
 
+        // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+        // password: hashedPassword habria que meter esto pero no se como
         db.User.update(req.body, { where: { id_user: req.params.id } })
-
             .then(function (users) {
                 res.redirect('/')
             })
