@@ -30,7 +30,6 @@ const usersController = {
                     res.locals.errors = errors;
                     return res.render('login')
                 };
-                // throw Error('Usuario no encontrado.')
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                     req.session.user = user;
                     if (req.body.remember) {
@@ -41,7 +40,6 @@ const usersController = {
                     errors.message = "Contraseña incorrecta."
                     res.locals.errors = errors;
                     return res.render('login')
-                    // throw Error('Credenciales no válidas.')
                 }
             })
     },
@@ -59,11 +57,12 @@ const usersController = {
     create: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
         try {
-            if (db.User.findOne({ where: { username: req.body.username } })) {
+            const user = await db.User.findOne({ where: {username: req.body.username}})
+            if (user) {
                 errors.message = "Email existente."
                 res.locals.errors = errors;
                 return res.render('register')
-            }
+            };
             if (req.body.username == "") {
                 errors.message = "Email no puede estar vacío."
                 res.locals.errors = errors;
@@ -74,8 +73,8 @@ const usersController = {
                 res.locals.errors = errors;
                 return res.render('register')
             };
-            if (req.body.password.length < 3) {
-                errors.message = "La contraseña debe tener un mínimo de 3 carácteres."
+            if (req.body.password.length < 5) {
+                errors.message = "La contraseña debe tener un mínimo de 5 carácteres."
                 res.locals.errors = errors;
                 return res.render('register')
             };
@@ -116,7 +115,12 @@ const usersController = {
         })
     },
     profileEdit: function (req, res) {
-       
+        if (req.session.user != req.params.id_user) {
+            throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
+        }
+        if (!req.session.user) {
+            throw Error(res.redirect('/')) //la pagina de edit no sera accesible si no esta logueado
+        }
         db.User.findByPk(req.params.id)
             .then(function (users) {
                 res.render('profile-edit', { users });
@@ -125,15 +129,14 @@ const usersController = {
                 res.send(error);
             })
     },
-    update: function (req, res) {
+    update: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
-        // if (req.body.username == db.User.findOne({ where: { username: req.body.username } })) {
-        //     errors.message = "Email existente."
-        //     res.locals.errors = errors;
-        //     return res.render('profile-edit')
-        // };
-        // esto no anda, pero deberiamos con lo que nos conteste luis ver si lo arreglamos para que no puedan cambiar su mail por alguno ya registrado
-
+        const user = await db.User.findOne({ where: {username: req.body.username}})
+        if (user) {
+            errors.message = "Email existente."
+            res.locals.errors = errors;
+            return res.render('register')
+        };
         if(req.body.password){
             req.body.password = bcrypt.hashSync(req.body.password, 10)
         } else{
