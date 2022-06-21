@@ -116,6 +116,7 @@ const usersController = {
         })
     },
     profileEdit: function (req, res) {
+       
         db.User.findByPk(req.params.id)
             .then(function (users) {
                 res.render('profile-edit', { users });

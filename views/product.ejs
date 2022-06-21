@@ -14,7 +14,7 @@
 			<!-- BOTON DE EDITAR-->
 			
 			
-			<% if (locals.user && user.id_user == products.id_user) { %>
+			<% if (locals.me && me.id_user == products.id_user) { %>
 				<p class="product-detail-description">
                 <a href="/products/<%= products.id_product %>/edit">Editar</a>
 			</p>
@@ -22,7 +22,7 @@
 	
 			<!-- BOTON DE BORRAR-->
 			
-			<% if (locals.user && user.id_user == products.id_user) { %>
+			<% if (locals.me && me.id_user == products.id_user) { %>
 				<p class="product-detail-description">
 				<a href="/products/<%= products.id_product %>/delete">Borrar</a>
 			</p>
