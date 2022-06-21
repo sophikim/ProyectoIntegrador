@@ -126,7 +126,12 @@ const usersController = {
     },
     update: function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
-
+        if (req.body.username == db.User.findOne({ where: { username: req.body.username } })) {
+            errors.message = "Email existente."
+            res.locals.errors = errors;
+            return res.render('profile-edit')
+        };
+        // esto no anda, pero deberiamos con lo que nos conteste luis ver si lo arreglamos para que no puedan cambiar su mail por alguno ya registrado
         // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
         // password: hashedPassword habria que meter esto pero no se como
         db.User.update(req.body, { where: { id_user: req.params.id } })
