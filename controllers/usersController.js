@@ -59,13 +59,13 @@ const usersController = {
     create: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
         try {
-            if (req.body.username == "") {
-                errors.message = "Email no puede estar vacío."
+            if (db.User.findOne({ where: { username: req.body.username } })) {
+                errors.message = "Email existente."
                 res.locals.errors = errors;
                 return res.render('register')
-            };
-            if (req.body.username == db.User.findOne({ where: { username: req.body.username } })) {
-                errors.message = "Email existente."
+            }
+            if (req.body.username == "") {
+                errors.message = "Email no puede estar vacío."
                 res.locals.errors = errors;
                 return res.render('register')
             };
