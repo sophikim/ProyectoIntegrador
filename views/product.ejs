@@ -12,8 +12,6 @@
 			<h2 class="products-title"> <%= products.name %> </h2> 
 			
 			<!-- BOTON DE EDITAR-->
-			
-			
 			<% if (locals.me && me.id_user == products.id_user) { %>
 				<p class="product-detail-description">
                 <a href="/products/<%= products.id_product %>/edit">Editar</a>
@@ -21,7 +19,6 @@
               <% } %>
 	
 			<!-- BOTON DE BORRAR-->
-			
 			<% if (locals.me && me.id_user == products.id_user) { %>
 				<p class="product-detail-description">
 				<a href="/products/<%= products.id_product %>/delete">Borrar</a>
@@ -58,6 +55,7 @@
                                 </div>
                             </div>
                         <% } %>
+
 					</section>
 
 					<form class="form" action="/products/<%= products.id_product %>/comment" method="post">

@@ -2,75 +2,81 @@
 
 	<!-- Header -->
 	<%- include('./partials/header.ejs') %>
-	<!-- /Header -->
+		<!-- /Header -->
 
-	<!-- Banner -->
-	<div class="banner">
+		<!-- Banner -->
+		<div class="banner">
 
-	</div>
-	<!-- /Banner -->
-
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<% for(let i=0; i <products.length; i++) { %>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/products/detail/<%= products[i].id_product %>">
-						<figure class="product-box_image">
-							<img src=<%= products[i].picture_product %> alt=<%= products[i].name %>>
-						</figure>
-						<article class="product-box_data">
-							<h2><%= products[i].name %></h2>
-							<a  href="/users/profile/<%= products[i].owner.id_user%>" class="epigrafe"> <%= products[i].owner.username %></a>
-							<p><%= products[i].description %></p>
-							<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
-							
-						</article>
-					</a>
-				</section>
-			</div>
-			<% } %>
 		</div>
-		<!-- /Novedades -->
+		<!-- /Banner -->
 
-		<!-- Más comentados -->
+		<!-- Novedades -->
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Más comentados</h2>
+					<h2 class="products-title">Novedades</h2>
 				</div>
-				
+				<!-- Show the "ultimos" products -->
+				<% for(let i=0; i <products.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/products/detail/<%= products[i].id_product %>">
+
+								<figure class="product-box_image">
+									<img src=<%=products[i].picture_product %> alt=<%= products[i].name %>>
+								</figure>
+
+								<article class="product-box_data">
+									<h2><%= products[i].name %></h2>
+									<a href="/users/profile/<%= products[i].owner.id_user%>" class="epigrafe"><%= products[i].owner.username %></a>
+									<p><%= products[i].description %></p>
+									<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
+								</article>
+
+							</a>
+						</section>
+					</div>
+					<% } %>
+			</div>
+			<!-- /Novedades -->
+
+			<!-- Más comentados -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Más comentados</h2>
+					</div>
+
 					<% for(let i=0; i <products.length; i++) { %>
-						<% if ( products[i].cant_comments >= 8) {%>	
-						<div class="col-12 col-sm-6 col-lg-3">
+						<% if ( products[i].cant_comments>= 8) {%>
+							<div class="col-12 col-sm-6 col-lg-3">
 								<section class="product-box">
 									<a href="/products/detail/<%= products[i].id_product %>">
+
 										<figure class="product-box_image">
 											<img src="<%= products[i].picture_product %>" alt="cafetera moulinex">
 										</figure>
+
 										<article class="product-box_data">
 											<h2><%= products[i].name %></h2>
 											<a href="/users/profile/<%= products[i].owner.id_user%>" class="epigrafe"><%= products[i].owner.username %></a>
 											<p><%= products[i].description %></p>
 											<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 										</article>
+
 									</a>
 								</section>
-							</div>	
-					<% } %> <% }%>
+							</div>
+						<% } %>
+					<% }%>
 
+				</div>
 			</div>
-		</div>
-		<!-- /Más comentados -->
+			<!-- /Más comentados -->
 
-		<!-- footer -->
-		<%- include('./partials/footer.ejs') %>
-		<!-- /footer -->
+			<!-- footer -->
+			<%- include('./partials/footer.ejs') %>
+				<!-- /footer -->
 
 </body>
 

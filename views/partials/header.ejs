@@ -37,7 +37,7 @@
                 </form>
             </div>
 
-            <!--BANNER DE TODAS LAS OPCIONES EN UN SOLO LUGAR (LO SACARÍA)-->
+            <!--BANNER-->
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd"></i>
@@ -50,7 +50,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <!--HEADER PARA USARIO LOGUEADO-->
+        <!--HEADER PARA USUARIO LOGUEADO-->
         <% if(locals.me) { %>
             <nav class="main-navbar">
                 <ul class="left-navbar">
@@ -65,14 +65,15 @@
                         </a>
                     </li>
                     <li>
-                        <a class="logout" type="submit" href="/users/logout"> Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
+                        <a class="logout" type="submit" href="/users/logout"> Cerrar sesión <i
+                                class="fas fa-sign-in-alt"></i></a>
                     </li>
 
                 </ul>
             </nav>
             <% } else { %>
 
-                <!-- HEADER PARA USARIO DESLOGUEADO-->
+                <!-- HEADER PARA USUARIO DESLOGUEADO-->
                 <nav class="main-navbar">
                     <ul class="left-navbar">
                         <li><a href="/" class="header-productos">Todos los productos</a></li>

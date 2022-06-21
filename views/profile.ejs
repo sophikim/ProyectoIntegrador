@@ -7,10 +7,13 @@
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
+
 			<div class="img-container offset-3 col-2">
 				<img src="<%= user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
 			</div>
+			
 			<div class="data-container col-6">
+
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= user.username %>
 
@@ -24,6 +27,7 @@
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
+
 				<div>
 					<ul class="info-profile">
 						<li> <%= user.products.length %> productos</li>
@@ -31,6 +35,7 @@
 						<li> <%= user.cant_comments %> comentarios</li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
 	</section>
@@ -42,6 +47,7 @@
 			<div class="col-12">
 				<h2 class="products-title">Mis productos</h2>
 			</div>
+
 			<!-- Show mis productos -->
 			<% for (let i= 0; i < user.products.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
@@ -64,15 +70,12 @@
 							<p> <%= user.products[i].description %></p>
 							<p>Comentarios: <%= user.products[i].cant_comments %></p>
 						</article>
-
-						<!--/detail/:id-->
 					
 					</a>
 				</section>
 
 			</div>
 			<% } %>
-			<!-- aca habria que poner algun if para que muestre solo los productos de ese usuario -->
 
 
 		</div>
