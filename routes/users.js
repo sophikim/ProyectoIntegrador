@@ -19,7 +19,7 @@ router.get('/:id/edit', usersController.profileEdit);
 router.post('/:id/edit', upload.single('profile_photo'), usersController.update);
 
 // otros perfiles
-// router.get('/:id', usersController.profile);
+router.get('/profile/:id', usersController.profile);
 
 //rutas formulario de registro 
 //register (esta lo muestra)

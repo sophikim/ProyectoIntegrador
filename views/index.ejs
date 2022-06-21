@@ -26,7 +26,7 @@
 						</figure>
 						<article class="product-box_data">
 							<h2><%= products[i].name %></h2>
-							<h3 class="epigrafe"> <%= products[i].owner.username %></h3>
+							<a  href="/users/profile/<%= products[i].owner.id_user%>" class="epigrafe"> <%= products[i].owner.username %></a>
 							<p><%= products[i].description %></p>
 							<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 							
@@ -55,7 +55,7 @@
 										</figure>
 										<article class="product-box_data">
 											<h2><%= products[i].name %></h2>
-											<h3 class="epigrafe"><%= products[i].owner.username %></h3>
+											<a href="/users/profile/<%= products[i].owner.id_user%>" class="epigrafe"><%= products[i].owner.username %></a>
 											<p><%= products[i].description %></p>
 											<p class="comentario-box">Comentarios: <%= products[i].cant_comments %></p>
 										</article>
