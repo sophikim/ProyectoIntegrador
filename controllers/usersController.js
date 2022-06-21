@@ -113,10 +113,6 @@ const usersController = {
         })
     },
     profileEdit: function (req, res) {
-        //const users = db.User.findOne({ where: {username: req.body.username}})
-       // if (req.session.user != users.id_user ) {
-         //throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
-        //}
         db.User.findByPk(req.params.id)
             .then(function (users) {
                 res.render('profile-edit', { users });
@@ -128,7 +124,7 @@ const usersController = {
     },
     update: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
-        const user = await db.User.findOne({ where: {username: req.body.username}})
+        // const user = await db.User.findOne({ where: {username: req.body.username}})
         // if (user == req.session.me) {
         //     errors.message = "Email existente."
         //     res.locals.errors = errors;
