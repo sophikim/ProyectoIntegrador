@@ -25,6 +25,7 @@ const productsController = {
         all: true,
         nested: true
       }, 
+      order: [ ['comments', 'id_comment', 'DESC']]
     }).then(function (products) {
       res.render('product', { products });
     })
