@@ -113,12 +113,12 @@ const usersController = {
         })
     },
     profileEdit: function (req, res) {
-        if (!req.session.user) {
-            throw Error(res.redirect('/')) //la pagina de edit no sera accesible si no esta logueado
-        }
-        if (req.session.me != req.params.id_user) {
-            throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
-        }
+       
+        //const users = db.User.findOne({ where: {username: req.body.username}})
+       // if (req.session.user == users.id_user ) {
+         //throw Error(res.redirect('/')) //la pagina de edit sera solo accesible para el usuario logueado
+        //}
+      
         db.User.findByPk(req.params.id)
             .then(function (users) {
                 res.render('profile-edit', { users });
@@ -126,6 +126,7 @@ const usersController = {
             .catch(function (error) {
                 res.send(error);
             })
+      
     },
     update: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
