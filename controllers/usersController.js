@@ -135,6 +135,11 @@ const usersController = {
             res.locals.errors = errors;
             return res.render('register')
         };
+        if (req.body.password.length < 5) {
+            errors.message = "La contraseña debe tener un mínimo de 5 carácteres."
+            res.locals.errors = errors;
+            return res.render('register')
+        };
         if(req.body.password){
             req.body.password = bcrypt.hashSync(req.body.password, 10)
         } else{
