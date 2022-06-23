@@ -16,7 +16,6 @@ const usersController = {
                 res.locals.errors = errors;
                 return res.render('login')
             };
-
         } catch (error) {
             return res.send(error);
         }
@@ -32,7 +31,7 @@ const usersController = {
                     req.session.user = user;
                     if (req.body.remember) {
                         res.cookie('userId', user.id_user, { maxAge: 1000 * 60 * 60 * 7 })
-                    }
+                    } 
                     res.redirect('/');
                 } else {
                     errors.message = "Contraseña incorrecta."
@@ -124,12 +123,6 @@ const usersController = {
     },
     update: async function (req, res) {
         if (req.file) req.body.profile_photo = (req.file.path).replace('public', '');
-        // const user = await db.User.findOne({ where: {username: req.body.username}})
-        // if (user == req.session.me) {
-        //     errors.message = "Email existente."
-        //     res.locals.errors = errors;
-        //     return res.render('register')
-        // };
         if(req.body.password){
             req.body.password = bcrypt.hashSync(req.body.password, 10)
         } else{
